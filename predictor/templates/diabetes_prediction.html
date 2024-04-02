@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Diabetes Prediction{% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+
+<section class="book_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form method="post" action="{% url 'diabetes_prediction' %}">
+            {% csrf_token %}
+            <h4>
+             DIABETES<span> PREDICTION</span>
+            </h4>
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="pregnancies">Number of Pregnancies: </label>
+                <input type="number" class="form-control" id="inputPatientName" name="pregnancies" min="0" max="10" required>
+              </div>
+              
+              <div class="form-group col-lg-4">
+                <label for="glucose">Glucose: </label>
+                <input type="number" class="form-control" id="inputPatientName" name="glucose" min="70" max="200" required>
+              </div>
+            
+              <div class="form-group col-lg-4">
+                <label for="blood_pressure">Blood Pressure (mm Hg): </label>
+                <input type="number" class="form-control" id="inputPatientName" name="blood_pressure" min="60" max="100" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="skin_thickness">Skin Thickness (mm): </label>
+                <input type="number" class="form-control" id="inputPatientName" name="skin_thickness" min="10" max="40" required>
+              </div>
+            
+              <div class="form-group col-lg-4">
+                <label for="insulin">Insulin (mu U/ml): </label>
+                <input type="number" class="form-control" id="inputPatientName" name="insulin" min="0" max="300" required>
+              </div>
+            
+              <div class="form-group col-lg-4">
+                <label for="bmi">Body Mass Index (weight in kg/(height in m)^2): </label>
+                <input type="number" class="form-control" id="inputPatientName" name="bmi" step="0.01" min="18.5" max="50" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="diabetes_pedigree_function">Diabetes Pedigree Function: </label>
+                <input type="number" class="form-control" id="inputPatientName" name="diabetes_pedigree_function" step="0.001" min="0" max="1" required>
+              </div>
+            
+              <div class="form-group col-lg-4">
+                <label for="age">Age: </label>
+                <input type="number" class="form-control" id="inputPatientName" name="age" min="0" required>
+              </div>
+            </div>
+            
+
+            <div class="btn-box">
+              <button type="submit" class="btn ">Predict</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

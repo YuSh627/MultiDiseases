@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+    <title>{% block title %}Result{% endblock %}</title>
+    <style>
+        .improve-box
+        {
+            display: inline-block;
+            padding: 10px 45px;
+            background-color: red;
+            color: #ffffff;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-transform: uppercase;
+            /*color: #00c6a9;*/
+
+        }
+        a, a:hover, a:focus
+        {
+            text-decoration: none;
+            color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'index_page' %}" class="logo-container">
+            <img src="{% static 'images/logoc4.png' %}" alt="Your Logo" class="logo">
+        </a>
+    </header>
+
+    <div class="result-container">
+        <div class="result-hero">
+            <h2 class="result-heading">{% block heading %}{% endblock %}</h2>
+        </div>
+        <div class="result-box {% if prediction != 0 %}attention-border{% endif %}">
+            <div class="result-detail-box">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

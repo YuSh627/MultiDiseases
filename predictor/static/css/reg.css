@@ -1,0 +1,99 @@
+/* Updated styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Add other common styles here */
+
+/* Login and Register Form Styles */
+
+.login-container,
+.register-container {
+    
+    
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.login-container h2,
+.register-container h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 10px;
+    color: #00c6a9; /* Header text color */
+}
+
+form {
+    margin-top: 20px;
+}
+
+form h2 {
+    font-weight: bold;
+    text-align: center; /* Center the login header */
+    color: #0c0c0c; /* Header text color */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555; /* Label text color */
+    font-weight: bold; /* Make the label text bold */
+}
+
+form input[type="text"],
+form input[type="password"],
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color:  #00c6a9;
+    color: #ffffff;
+    padding: 12px 45px;
+    border-radius: 5px;
+    
+    display: block; /* Make the button a block-level element for centering */
+    margin: 0 auto; /* Center the button within the container */
+}
+
+form button:hover {
+    background-color: #0c0c0c;
+}
+
+form p.register-link {
+    margin-top: 15px;
+    text-align: center; /* Center the registration link */
+}
+
+form a.register-button {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: small;
+    
+     /* Make the link a block-level element for centering */
+    padding: 12px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    background-color: #00c6a9;
+    transition: background-color 0.3s;
+}
+
+form a.register-button:hover {
+    background-color: #0c0c0c;
+}

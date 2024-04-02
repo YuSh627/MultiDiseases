@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    
+    <style>
+        /* Include the styles from the provided CSS */
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container-fluid {
+            padding-right: 25px;
+            padding-left: 25px;
+            background:  #00c6a9;
+        }
+        .result-hero {
+            background:#00c6a9;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            width: 100%;
+            position: relative; /* Set position to relative for positioning the logo box */
+        }
+
+        .logo-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #ffffff; /* White background for the logo box */
+            padding: 22px 25px;
+        }
+
+        .navbar-brand img {
+            width: 90px;
+        }
+
+        .result-heading {
+            margin: 0;
+            font-size: 50px;
+        }
+
+
+        .result-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .result-detail-box {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Additional styles for the given HTML code */
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px; /* Add margin to the top of the table */
+        }
+
+        th,
+        td {
+            border: 1px solid #00c6a9;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the table header */
+        th {
+            background-color: #00c6a9;
+            color: #fff;
+        }
+
+        /* Style the table rows alternately for better readability */
+        tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        /* Style the prediction column based on the value */
+        td:nth-child(16) {
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        td:nth-child(16) span.positive {
+            background-color: #00c6a9;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        td:nth-child(16) span.negative {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .btn-danger {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #cc0000;
+        }
+
+        button.btn {
+            background-color: #00c6a9;
+            color: #ffffff;
+            font-size: medium;
+            margin-top: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Set a specific width for the button */
+        }
+        
+        button.btn:hover {
+            color: #00c6a9;
+           
+        }    
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="result-hero">
+                <div class="logo-box">
+                    <a class="navbar-brand" href="{% url 'index_page' %}">
+                        <img src="{% static 'images/logoc4.png' %}" alt="" />
+                    </a>
+                </div>
+                <h1 class="result-heading">{% block title %}{% endblock %}</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="result-container">
+        {% block content %}{% endblock %}
+
+       <div>
+        <a href="{% url 'profile_page' %}"><button class="btn">Back To Profile</button></a>
+       </div>
+
+    </div>
+  
+
+</body>
+
+</html>

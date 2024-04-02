@@ -1,0 +1,171 @@
+{% extends 'improve_health.html' %}
+
+{% block title %}Tips for Heart Disease{% endblock %}
+
+{% block heading %}TIPS FOR HEART DISEASE{% endblock %}
+
+
+{% load static %}
+
+{% block content %}
+<div class="container1">
+    <div class="section">
+        <h2>Health Tips for Heart Disease</h2>
+        <div class="tip">
+            <ul>
+                <li><strong>Blood Sugar Monitoring:</strong> Monitor your blood sugar levels regularly using a glucometer as recommended by your healthcare provider. Keeping track of your blood sugar levels helps you understand how your diet, exercise, and medication affect your diabetes management.</li>
+                <li><strong>Healthy Diet:</strong> Follow a well-balanced diet that includes plenty of fruits, vegetables, whole grains, lean proteins, and healthy fats. Monitor your carbohydrate intake and choose complex carbohydrates over simple sugars. Avoid sugary beverages and highly processed foods. Consider working with a registered dietitian or certified diabetes educator to develop a meal plan tailored to your needs.</li>
+                <li><strong>Regular Exercise:</strong> Engage in regular physical activity to help control blood sugar levels, improve insulin sensitivity, and maintain a healthy weight. Aim for at least 150 minutes of moderate-intensity aerobic exercise or 75 minutes of vigorous-intensity exercise per week, along with muscle-strengthening activities on two or more days per week.</li>
+                <li><strong>Medication Adherence:</strong> Take your diabetes medications as prescribed by your healthcare provider. This may include insulin injections, oral medications, or other injectable medications to help control blood sugar levels. Follow the prescribed dosages and timing of medications.</li>
+                <li><strong>Weight Management:</strong> Maintain a healthy weight or work towards achieving a healthy weight if you are overweight or obese. Losing weight can improve insulin sensitivity and blood sugar control.</li>
+                <li><strong>Quit Smoking:</strong> If you smoke, quit smoking as soon as possible. Smoking increases the risk of complications associated with diabetes, such as heart disease and nerve damage.</li>
+                <li><strong>Limit Alcohol Intake:</strong> If you drink alcohol, do so in moderation. Alcohol can affect blood sugar levels and may interact with diabetes medications.</li>
+                <li><strong>Foot Care:</strong> Inspect your feet daily for any cuts, sores, blisters, or other injuries, as diabetes can affect circulation and nerve function, increasing the risk of foot complications. Wash your feet daily, keep them moisturized, and wear properly fitting shoes.</li>
+                <li><strong>Manage Stress:</strong> Practice stress-reduction techniques such as deep breathing, meditation, yoga, or spending time on hobbies and activities that you enjoy. Stress can affect blood sugar levels, so managing stress is important for diabetes management.</li>
+                <li><strong>Regular Healthcare Checkups:</strong> Attend regular checkups with your healthcare provider to monitor your diabetes, assess your overall health, and adjust your treatment plan as needed.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Cardiologist</h2>
+        <div class="doctor">
+            <img src="{% static 'images/team3.jpg' %}" alt="Doctor 1">
+            <h3>Dr. John Smith</h3>
+            <p>Cardiologist</p>
+            <p>MD, FACC</p>
+            <p>Dr. John Smith is a board-certified cardiologist specializing in...</p>
+        </div>
+
+    </div> -->
+
+    <div class="section">
+        <h2>Recommended Videos</h2>
+        <div class="video">
+            <h3>4 ways to prevent heart Disease</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/02SL-xxeiNw" frameborder="0" allowfullscreen></iframe>
+        </div>
+    
+        <div class="video">
+            <h3>Heart Disease Prevention</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XAWClk3hD7w" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+    </div>
+</div>
+
+<section class="team_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Suggested <span>Doctors</span>
+        </h2>
+      </div>
+      <div class="carousel-wrap " align="center">
+        <div class="owl-carousel team_carousel">
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/Dr.-Sanjeev-Thapa-1-cardio.jpg' %}" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  <a href="https://www.clinicone.com.np/dr-sanjeev-thapa-dm-senior-cardiologist-kathmandu/" target="_blank" style="text-decoration: underline; color: blue;">Dr. Sanjeev Thapa</a>
+                </h5>
+                <h6>
+                  Cardiologist
+                </h6>
+                <div class="social_box">
+                  <h6>
+                    Department: Cardiology<br>
+                    Qualification: DM (Cardiology), MBBS<br>
+                    Works at: Clinic One Hospital<br> 
+                    Available: Mon After 5 pm<br>
+                    
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% comment %} <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/Dr-Kabita-Keyal.jpg' %}" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Dr. Kabita Keyal
+                </h5>
+                <h6>
+                 Cardiologist
+                </h6>
+                <div class="social_box">
+                  <h6>
+                    Department: Cardiology<br>
+                    Qualification: MD (Cardiology), MBBS<br>
+                    
+                    Contact no: 9841282893
+                   </h6>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/Dr.-Parag-Karki-cardio.jpg' %}" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  <a href="https://www.clinicone.com.np/dr-parag-karki-best-cardiologist-nepal/" target="_blank" style="text-decoration: underline; color: blue;">Dr. Parag Karki</a>
+                </h5>
+                <h6>
+                 Cardiologist
+                </h6>
+                <div class="social_box">
+                  <h6>
+                    Department: Cardiology<br>
+                    Qualification: DM (Cardiology), MBBS<br>
+                    Works at: Clinic One Hospital</br> 
+                    Available: Sun - Fri (6 pm)</br>
+                    
+                   </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% comment %} <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/timthumb.jpg' %}" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Dr. Parag Karki
+                </h5>
+                <h6>
+                 Cardiologist
+                </h6>
+                <div class="social_box">
+                  <h6>
+                    Department: Cardiology<br>
+                    Qualification: MCh (Cardiology), MBBS<br>
+                
+                    Contact no: 9841282123
+                   </h6>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+    </div>
+  </section>
+  
+  
+  
+  
+  
+
+
+
+
+{% endblock %}

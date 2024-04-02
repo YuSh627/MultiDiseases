@@ -1,0 +1,112 @@
+{% extends 'pmain.html' %}
+{% load static %}
+
+{% block title %}Heart Disease Profile{% endblock %}
+
+{% block content %}
+
+   
+
+    {% if prediction_data %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Chest Pain Type</th>
+                    <th>Resting Blood Pressure</th>
+                    <th>Cholesterol</th>
+                    <th>Fasting Blood Sugar</th>
+                    <th>Resting Electrocardiographic Results</th>
+                    <th>Maximum Heart Rate Achieved</th>
+                    <th>Exercise Induced Angina</th>
+                    <th>ST Depression Induced by Exercise</th>
+                    <th>Slope of the Peak Exercise ST Segment</th>
+                    <th>Number of Major Vessels Colored by Fluoroscopy</th>
+                    <th>Thal</th>
+                    <th>Prediction</th>
+                    <th>Action</th> <!-- New column for delete button -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in prediction_data %}
+                    <tr>
+                        <td>{{ data.timestamp }}</td>
+                        <td>{{ data.age }}</td>
+                        <td>{{ data.sex }}</td>
+                        <td>{{ data.cp }}</td>
+                        <td>{{ data.trestbps }}</td>
+                        <td>{{ data.chol }}</td>
+                        <td>{{ data.fbs }}</td>
+                        <td>{{ data.restecg }}</td>
+                        <td>{{ data.thalach }}</td>
+                        <td>{{ data.exang }}</td>
+                        <td>{{ data.oldpeak }}</td>
+                        <td>{{ data.slope }}</td>
+                        <td>{{ data.ca }}</td>
+                        <td>{{ data.thal }}</td>
+                        <td>{% if data.prediction == 0 %}
+                                Negative
+                            {% else %}
+                                Positive
+                            {% endif %}
+                        </td>
+                        <td>
+                            <form method="post" action="{% url 'delete_heartdisease_data' pk=data.pk %}">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No prediction data available.</p>
+    {% endif %}
+    <div id="chart-container">
+        <canvas id="myPieChart"></canvas>
+    </div>
+
+    <button id="generate-chart-btn" class="btn btn-primary">Generate Pie Chart</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.getElementById('generate-chart-btn').addEventListener('click', function () {
+            fetch('/generate_heartdisease_chart/')  // Update with your actual endpoint
+                .then(response => response.json())
+                .then(chartData => {
+                    generatePieChart(chartData);
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        function generatePieChart(chartData) {
+            var ctx = document.getElementById('myPieChart').getContext('2d');
+
+            var data = {
+                labels: ['Negative', 'Positive'],
+                datasets: [{
+                    data: [chartData.negativeCount, chartData.positiveCount],
+                    backgroundColor: ['#00c6a9', '#FF6384'],
+                    hoverBackgroundColor: ['#00c6a9', '#FF6384']
+                }]
+            };
+
+            var options = {
+                responsive: true,
+                maintainAspectRatio: false
+            };
+
+            new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: options
+            });
+        }
+    </script>
+    
+
+    
+{% endblock %}
